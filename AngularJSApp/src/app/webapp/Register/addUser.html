@@ -1,0 +1,40 @@
+<script type="text/ng-template" id="add_user_popup.html">
+<div class="modal" tabindex="-1">
+		 <div class="modal-dialog modal-lg">
+			<div class="modal-content">
+        <div class="modal-header">
+            <h2 class="font-showcase-font-name" style="color : #157bb2">{{label}}</h2>
+        </div>
+		<form name="formdata" ng-submit="saveUser(user);" novalidate>
+        <div class="modal-body">
+			<div class="form-group row">
+            <div class="form-group col-sm-6" ng-class="{ 'has-error' : formdata.firstName.$invalid && !formdata.firstName.$pristine }">
+                <label>First Name:<sup><b>*</b></sup></label><br>
+                <input type="text" ng-model="user.firstName" class="form-control" name= "firstName"  required/>
+				<p ng-show="formdata.firstName.$invalid && !formdata.firstName.$pristine" class="help-block">First Name is Mandatory.</p>
+            </div>
+            </div>
+			<div class="form-group row">
+            <div class="form-group col-sm-6" ng-class="{ 'has-error' : formdata.lastName.$invalid && !formdata.lastName.$pristine }">
+                <label>Last Name:<sup><b>*</b></sup></label><br>
+                <input type="text" ng-model="user.lastName" class="form-control" name= "lastName"  required/>
+				<p ng-show="formdata.lastName.$invalid && !formdata.lastName.$pristine" class="help-block">Last Name is Mandatory.</p>
+            </div>
+			</div>
+			<div class="form-group row">
+            <div class="form-group col-sm-6" ng-class="{ 'has-error' : formdata.contactNo.$invalid && !formdata.contactNo.$pristine }">
+                <label>Contact No:<sup><b>*</b></sup></label><br>
+                <input type="text" ng-model="user.contactNo" class="form-control" name= "contactNo"  required/>
+				<p ng-show="formdata.contactNo.$invalid && !formdata.contactNo.$pristine" class="help-block">Contact No is Mandatory.</p>
+            </div>
+			</div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" type="submit" ng-disabled="formdata.$invalid">Save</button>
+            <button class="btn btn-default"  type="button" ng-click="close()">Close</button>
+        </div>
+		</form>
+			</div>
+</div>
+ </div>
+</script>
